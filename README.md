@@ -19,7 +19,7 @@
 - Third tier of the web development architecture (Client - Application - Data)
 
  - [3-Tier Architectured](./3tier.jpg)
- - [Reference](https://www.quora.com/What-is-the-role-of-a-web-service-in-a-three-tier-architecture)
+ - [Image Reference](https://www.quora.com/What-is-the-role-of-a-web-service-in-a-three-tier-architecture)
 
 
 ### Database Management System (DBMS)
@@ -77,7 +77,7 @@ Main DBMS
 - Deleting a database (dropdb name)
 - Creating, modifying, of deleteing tables
 
-[Create Tables](./db/create_tables.sql)
+[Create Tables](./db/create.sql)
 
 ### Data Manipulation Language (DML)
 
@@ -127,3 +127,29 @@ GROUP BY column list
 HAVING criteria for function results
 ORDER BY column list;
 ```
+
+#### JOINS
+
+- We use joins when we need the data of more than one table
+
+- There are different types of joins
+
+  - INNER JOIN
+  - [LEFT || RIGHT] OUTER JOIN
+
+We can use a Venn diagram to more easily see the effet of the type of joins.
+
+ - [Venn Diagram of joins](./joins.png)
+
+#### Games Database
+
+We performed a few SELECT statements on our Games database.
+
+- [Games DB Queries](./sql.md)
+
+#### Projects Exercise
+
+We did a group exercises using the Projects database.
+
+- [Projects DB Exercise ](https://gist.github.com/DominicTremblay/4ef26173e6ba883287cb02ce65415954)
+- [Projects DB Solutions](./queries_solutions.sql)
