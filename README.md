@@ -5,11 +5,22 @@
 - What is a database
 - Writing SQL
 
+## Why a Database?
+
+- Our W3 project - TinyApp - was using an in-memory database and used objects as a data structure
+
+- What was the issue with keeping our data in an in-memory database?
+
+
 ## What is a database
 
 - Organized collection of persisted data
 - Information being written to be used at a later time
 - Third tier of the web development architecture (Client - Application - Data)
+
+ - [3-Tier Architectured](./3tier.jpg)
+ - [Reference](https://www.quora.com/What-is-the-role-of-a-web-service-in-a-three-tier-architecture)
+
 
 ### Database Management System (DBMS)
 
@@ -79,9 +90,7 @@ Main DBMS
 
 ## Write SELECT statements
 
-- We are going to use the following DB to make queries
-
-![ERD](./w5d1_erd.svg)
+- We are going to use the games DB to make queries
 
 - Tables have an id column marked as a PK, this is our "Primary Key"
 - Primary keys are unique identifiers which identifies each row
@@ -92,13 +101,13 @@ Main DBMS
 
 At the terminal, write the following commands
 
-- `createdb projects`
-- `psql projects < db/create_tables.sql`
-- `psql projects < db/seeds.sql`
+- `createdb games`
+- `psql games < db/create.sql`
+- `psql games < db/seeds.sql`
 
 - At the terminal, get into the projects database
 
-`psql projects`
+`psql games`
 
 ### SELECT STATEMENT
 
@@ -118,62 +127,3 @@ GROUP BY column list
 HAVING criteria for function results
 ORDER BY column list;
 ```
-
-#### BASIC SELECT QUERY
-
- - The SELECT statement is specifying the columns of the tables should be part of the output  
-- `*` all columns or specify each column names individually
-
-`SELECT * FROM projects;`
-
-`SELECT name FROM projects;`
-
-`SELECT * from tasks;`
-
-`SELECT name, completed from tasks;`
-
-- The `WHERE` is filtering out the rows of the result set
-
-```sql
-SELECT *
-FROM tasks
-WHERE completed = TRUE;
-```
-
-- We can use `ORDER BY` to sort the result set
-
-```sql
-SELECT *
-FROM tasks
-WHERE completed = TRUE
-ORDER_BY project_id DESC;
-```
-
-- Aggregate functions
-
-- We can use aggregate functions like `COUNT`, `SUM`, `AVG`, `MIN`,`MAX`
-
-```sql
-SELECT completed, count(id)
-FROM tasks
-GROUP BY completed;
-```
-
-- JOINS
-
-- We use joins when we need the data of more than one table
-
-- There are different types of joins
-
-  - INNER JOIN
-  - [LEFT || RIGHT] OUTER JOIN
-
-```sql
-SELECT *
-FROM projects
-INNER JOIN tasks
-ON projects.id = tasks.project_id;
-```
-
-- [Additonal exercises we did](./queries_solutions.sql)
-
