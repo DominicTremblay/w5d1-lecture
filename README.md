@@ -29,7 +29,7 @@
 - Defines rules to validate and manipulate this data
 - Uses a query language
 
-Main DBMS
+Main RDBMS
 
 - Oracle
 - MySQL (free software)
@@ -50,7 +50,7 @@ Main DBMS
   - Cassandran
   - HBase
 - Graph databases
-- Document databases (JSON like format)
+- Document databases (JSON-like format)
   - MongoDB
 - Real-Time Database
   - Firebase

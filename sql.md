@@ -5,6 +5,8 @@
 - SELECT filters out the columns you want in the results
 - `*` means all the columns
 
+### Query
+
 `SELECT * from platforms;`
 
 | id  | name          | developer | release_date |
@@ -35,9 +37,20 @@
 | GT Sport            | Racing game        |
 | Street Fighter 5    | Fighting game      |
 
+## DISTINCT
+
+- Whenever you want to remove duplicates from rows
+
+```sql
+SELECT DISTINCT genre
+FROM games;
+```
+
 ## SELECT Statement With WHERE
 
 - The `WHERE` is filtering out the rows of the result set
+
+### Query
 
 ```SQL
 SELECT title, genre
@@ -54,6 +67,8 @@ WHERE rating = 'Everyone';
 
 ## ORDER BY
 
+### Query
+
 ```SQL
 SELECT title, genre
 FROM games
@@ -68,9 +83,66 @@ ORDER BY title;
 | Mario Kart 8 Deluxe | Racing game      |
 | Super Mario Odyssey | Action-adventure |
 
+## LIMIT & OFFSET
+
+- We can limit the number of rows with `LIMIT`
+
+### Query
+
+```sql
+SELECT * 
+FROM games
+ORDER BY title
+LIMIT 3;
+```
+
+- We can skip a number of rows with `OFFSET`
+
+### Query
+
+```sql
+SELECT * 
+FROM games
+ORDER BY title
+LIMIT 3
+OFFSET 2;
+```
+
+## IN
+
+- We can specify multiple AND clauses with IN
+
+```sql
+SELECT title, genre, rating
+FROM GAMES
+WHERE genre IN ('Fighting game', 'Real-time strategy', 'Action-adventure' );
+```
+
+## LIKE
+
+- When you want to use partial match in a WHERE clause
+
+```sql
+SELECT title, genre, rating
+FROM GAMES
+WHERE title like '%Mario%';
+```
+
+- It is case sensitive. To make it case-incensitive:
+
+```sql
+SELECT title, genre, rating
+FROM GAMES
+WHERE LOWER(title) like '%mario%';
+```
+
+
+
 ## Aggregate functions
 
 - We can use aggregate functions like `COUNT`, `SUM`, `AVG`, `MIN`,`MAX`
+
+### Query
 
 ```sql
 SELECT genre, COUNT(id)
@@ -86,6 +158,23 @@ GROUP BY genre;
 | Action-adventure   | 1     |
 
 ### With HAVING
+
+Having is filtering the aggrate function.
+
+### Which platform has the most title rated 'Everyone' 
+
+```sql
+SELECT name, games.rating, COUNT(games.id) AS genre_count
+FROM platforms
+INNER JOIN games
+ON platforms.id = games.platform_id 
+WHERE rating = 'Everyone'
+GROUP BY name, rating
+ORDER BY genre_count DESC
+LIMIT 1;
+```
+
+### Query
 
 ```sql
 SELECT genre, COUNT(id)
@@ -106,6 +195,8 @@ HAVING COUNT(id) > 1;
 
   - INNER JOIN
   - [LEFT || RIGHT] OUTER JOIN
+
+### Query
 
   ```sql
   SELECT  games.title, platforms.name, platforms.developer

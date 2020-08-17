@@ -5,14 +5,14 @@ DROP TABLE IF EXISTS platforms;
 
 
 CREATE TABLE platforms(
-  id SERIAL PRIMARY KEY NOT NULL,
+  id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   developer TEXT NOT NULL,
   release_date DATE
 );
 
 CREATE TABLE games(
-  id SERIAL PRIMARY KEY NOT NULL,
+  id SERIAL PRIMARY KEY,
   title TEXT NOT NULL,
   description TEXT,
   release_date DATE,

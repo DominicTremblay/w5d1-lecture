@@ -59,6 +59,6 @@ WHERE project_id isNull;
 -- List ALL tasks in the database, along with their project name (need for [LEFT] OUTER JOIN so that all tasks are included, since the join col is nullable)
 SELECT *
 FROM tasks
-RIGHT OUTER JOIN projects
+RIGHT LEFT JOIN projects
 ON tasks.project_id = projects.id;
 
