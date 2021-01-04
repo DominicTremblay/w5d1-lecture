@@ -2,8 +2,12 @@
 
 ## Content
 
-- What is a database
-- Writing SQL
+- Why a Database
+- DBMS
+- Relational Databases
+- SQL
+  - DDL
+  - DML
 
 ## Why a Database?
 
@@ -16,8 +20,6 @@
 - Redundancy: without proper organization, data can become redundant. We can have duplicated data.
 - Data Integrity: if updates are not handled properly, our data might become inconsistent.
 - Security: we might store sensitive data. We don't want anyone to have access to it.
-
-
 
 ## What is a database
 
@@ -159,4 +161,4 @@ We performed a few SELECT statements on our Games database.
 We did a group exercises using the Projects database.
 
 - [Projects DB Exercise ](https://gist.github.com/DominicTremblay/4ef26173e6ba883287cb02ce65415954)
-- [Projects DB Solutions](./queries_solutions.sql)0
+- [Projects DB Solutions](./queries_solutions.sql)
