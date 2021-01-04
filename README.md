@@ -159,4 +159,4 @@ We performed a few SELECT statements on our Games database.
 We did a group exercises using the Projects database.
 
 - [Projects DB Exercise ](https://gist.github.com/DominicTremblay/4ef26173e6ba883287cb02ce65415954)
-- [Projects DB Solutions](./queries_solutions.sql)0
+- [Projects DB Solutions](./queries_solutions.sql)
