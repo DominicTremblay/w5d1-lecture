@@ -1,7 +1,3 @@
-ALTER SEQUENCE platforms_id_seq RESTART WITH 1;
-ALTER SEQUENCE games_id_seq RESTART WITH 1;
-
-
 INSERT INTO platforms(name, developer, release_date) VALUES ('X Box One', 'Microsoft', '2013-11-22');
 INSERT INTO platforms(name, developer, release_date) VALUES ('PlayStation 4', 'Sony', '2013-11-15');
 INSERT INTO platforms(name, developer, release_date) VALUES ('Switch', 'Nintendo', '2017-03-03');
